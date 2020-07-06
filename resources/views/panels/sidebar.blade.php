@@ -18,7 +18,7 @@
             @if(Request::is('dashboard'))
             <li class="nav-item open"><a href="{{ route('dashboard') }}"><i class="feather icon-home"></i><span class="menu-title"">Dashboard</span></a>
             </li>
-            <li class="nav-item"><a href="{{ route('dashboard') }}"><i class="feather icon-home"></i><span class="menu-title"">Master</span></a>
+            <li class="nav-item"><a href="{{ route('dashboard') }}"><i class="feather icon-home"></i><span class="menu-title"">Master Data</span></a>
                 <ul class="menu-content">
                     <li><a href="#"><i class="feather icon-circle"></i><span class="menu-item">Data Karyawan</span></a>
                     </li>
