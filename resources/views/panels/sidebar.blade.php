@@ -21,7 +21,7 @@
                 <ul class="menu-content">
                     <li><a href="#"><i class="feather icon-circle"></i><span class="menu-item">Data Karyawan</span></a>
                     </li>
-                    <li><a href="#"><i class="feather icon-circle"></i><span class="menu-item">Data Golongan</span></a>
+                    <li><a href="{{ route('golongan') }}"><i class="feather icon-circle"></i><span class="menu-item">Data Golongan</span></a>
                     </li>
                     <li><a href="#"><i class="feather icon-circle"></i><span class="menu-item">Data Status</span></a>
                     </li>
@@ -49,6 +49,6 @@
             </li>
             {{-- Foreach menu item ends --}}
         </ul>
-    </div> 
+    </div>
 </div>
 <!-- END: Main Menu-->

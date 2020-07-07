@@ -22,7 +22,7 @@ Route::group(['middleware' => ['auth', 'xss']], function() {
 
     //Events
     Route::get('/event', 'EventController@index')->name('event');
-    
+
     //Map Awareness
     Route::get('/map-awareness', 'MapController@index')->name('map-awareness');
 
@@ -31,6 +31,8 @@ Route::group(['middleware' => ['auth', 'xss']], function() {
 
     //Setting
     Route::get('/setting', 'SettingController@index')->name('setting');
+
+    Route::get('/golongan', 'GolonganController@index')->name('golongan');
 });
 
 
