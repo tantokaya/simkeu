@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
 class GolonganController extends Controller
 {
     /**
@@ -13,7 +14,7 @@ class GolonganController extends Controller
      */
     public function index()
     {
-      return view('golongan.index')->with('golongan',Golongan::all());
+      return view('golongan.index');
     }
 
     /**
