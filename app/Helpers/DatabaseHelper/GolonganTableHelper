@@ -1,0 +1,48 @@
+<?php
+
+namespace App\Helpers\DatabaseHelper;
+
+use Yab\MySQLScout\Engines\MySQLEngine;
+use Laravel\Scout\Builder;
+use Illuminate\Support\Facades\DB;
+
+class GolonganTableHelper {
+
+  // laravel.com/docs/4.2/queries
+
+    public static function create($data) {
+      $gol_id = DB::table('golongan')->insert(
+        array(
+          'nama' => $data.name,
+          'position' => $data.position,
+          'office' => $data.office,
+          'age' => $data.age,
+          'start_date' => $data.start_date,
+          'salary' => $data.salary
+      ));
+
+      return true;
+    }
+
+    public static function read($syntax) {
+      if ($syntax == "")
+        $syntax = "*";
+      return DB::table('golongan').select($syntax).get();
+    }
+
+    public static function update($kumpulan_data) {
+      foreach ($data : $kumpulan_data) {
+        $data_name = $data.name;
+        $data_gaji = $data.gaji;
+        DB::table('golongan')->where('name' => $data_name)->update('salary' => $data_gaji);
+      }
+
+      return true;
+    }
+
+    public static function delete($data) {
+      DB::table('golongan')->where('name' => $data.name).delete();
+      return true;
+    }
+
+}

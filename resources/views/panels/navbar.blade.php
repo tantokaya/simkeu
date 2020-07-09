@@ -17,11 +17,11 @@
                         <li class="nav-item mobile-menu d-xl-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ficon feather icon-menu"></i></a></li>
                     </ul>
                     <ul class="nav navbar-nav bookmark-icons">
-                        <li class="nav-item d-none d-lg-block"><a class="nav-link" href="{{ route('dashboard') }}" data-toggle="tooltip" data-placement="top" title="Dashboard">Dashboard</a></li>
+                        {{-- <li class="nav-item d-none d-lg-block"><a class="nav-link" href="{{ route('dashboard') }}" data-toggle="tooltip" data-placement="top" title="Dashboard">Dashboard</a></li>
                         <li class="nav-item d-none d-lg-block"><a class="nav-link" href="{{ route('event') }}" data-toggle="tooltip" data-placement="top" title="Events">Events</a></li>
                         <li class="nav-item d-none d-lg-block"><a class="nav-link" href="{{ route('map-awareness') }}" data-toggle="tooltip" data-placement="top" title="Map Awareness">Map Awareness</a></li>
                         <li class="nav-item d-none d-lg-block"><a class="nav-link" href="{{ route('report') }}" data-toggle="tooltip" data-placement="top" title="Reports">Reports</a></li>
-                        <li class="nav-item d-none d-lg-block"><a class="nav-link" href="{{ route('setting') }}" data-toggle="tooltip" data-placement="top" title="Setting">Setting</a></li>
+                        <li class="nav-item d-none d-lg-block"><a class="nav-link" href="{{ route('setting') }}" data-toggle="tooltip" data-placement="top" title="Setting">Setting</a></li> --}}
                     </ul>
                     <ul class="nav navbar-nav">
                         <li class="nav-item d-none d-lg-block"><a class="nav-link bookmark-star"></a>

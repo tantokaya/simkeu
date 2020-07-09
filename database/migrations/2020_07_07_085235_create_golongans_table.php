@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGolonganTable extends Migration
+class CreateGolongansTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class CreateGolonganTable extends Migration
      */
     public function up()
     {
-        Schema::create('golongan', function (Blueprint $table) {
-            $table->bigIncrements('gol_id');
+        Schema::create('golongans', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->string('gol_nm');
             $table->timestamps();
         });
@@ -27,6 +27,6 @@ class CreateGolonganTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('golongan');
+        Schema::dropIfExists('golongans');
     }
 }

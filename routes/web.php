@@ -20,19 +20,17 @@ Route::get('/', 'Auth\LoginController@showLoginForm');
 Route::group(['middleware' => ['auth', 'xss']], function() {
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
-    //Events
-    Route::get('/event', 'EventController@index')->name('event');
-
-    //Map Awareness
-    Route::get('/map-awareness', 'MapController@index')->name('map-awareness');
-
-    //Report
-    Route::get('/report', 'ReportController@index')->name('report');
-
-    //Setting
-    Route::get('/setting', 'SettingController@index')->name('setting');
-
     Route::get('/golongan', 'GolonganController@index')->name('golongan');
+
+    Route::get('/golongan/create', 'GolonganController@create')->name('golongan.create');
+
+    Route::post('/golongan/store', 'GolonganController@store')->name('golongan.store');
+
+    Route::get('/golongan/edit/{id}', 'GolonganController@edit')->name('golongan.edit');
+
+    Route::get('/golongan/delete/{id}', 'GolonganController@destroy')->name('golongan.delete');
+
+    Route::post('/golongan/update/{id}', 'GolonganController@update')->name('golongan.update');
 });
 
 
