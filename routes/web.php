@@ -33,6 +33,16 @@ Route::group(['middleware' => ['auth', 'xss']], function() {
     Route::get('/setting', 'SettingController@index')->name('setting');
 
     Route::get('/golongan', 'GolonganController@index')->name('golongan');
+
+    Route::get('/golongan/create', 'GolonganController@create')->name('golongan.create');
+
+    Route::post('/golongan/store', 'GolonganController@store')->name('golongan.store');
+
+    Route::get('/golongan/edit/{id}', 'GolonganController@edit')->name('golongan.edit');
+
+    Route::get('/golongan/delete/{id}', 'GolonganController@destroy')->name('golongan.delete');
+
+    Route::post('/golongan/update/{id}', 'GolonganController@update')->name('category.update');
 });
 
 

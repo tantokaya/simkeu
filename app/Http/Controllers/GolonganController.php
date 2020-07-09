@@ -4,6 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Http\Requests;
+
+// use App\Helpers\DatabaseHelper\GolonganTableHelper;
+use App\Golongan;
+
+use Session;
 
 class GolonganController extends Controller
 {
@@ -14,7 +20,7 @@ class GolonganController extends Controller
      */
     public function index()
     {
-      return view('golongan.index');
+      return view('golongan.index')->with('golongans',Golongan::all());
     }
 
     /**
@@ -24,7 +30,7 @@ class GolonganController extends Controller
      */
     public function create()
     {
-        //
+        return view('golongan.create');
     }
 
     /**
@@ -35,7 +41,13 @@ class GolonganController extends Controller
      */
     public function store(Request $request)
     {
-        //
+            $this->validate($request, [
+                 'name' => 'required'
+          ]);
+          $golongan = new Golongan;
+          $golongan->gol_nm = $request->nama;
+          $golongan->save();
+          return redirect('golongan.index');
     }
 
     /**

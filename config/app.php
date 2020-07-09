@@ -176,6 +176,9 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\MenuServiceProvider::class,
 
+        // MySQL Driver
+        Yab\MySQLScout\Providers\MySQLScoutServiceProvider::class,
+
     ],
 
     /*

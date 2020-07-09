@@ -2,7 +2,6 @@
 @extends('layouts/contentLayoutMaster')
 
 @section('title', 'Data Golongan')
-
 @section('vendor-style')
         {{-- vendor css files --}}
         <link rel="stylesheet" href="{{ asset(mix('vendors/css/tables/datatable/datatables.min.css')) }}">
@@ -10,7 +9,10 @@
 
 @section('content')
 <div class="row">
-    
+  <div style="padding-left: 20px; padding-bottom: 10px;">
+    <a href="{{ route('golongan.create') }}"> <button type="button" class="btn btn-primary">Tambah</button></a>
+    <br/>
+  </div>
   </div>
   <!-- Zero configuration table -->
   <section id="basic-datatable">
@@ -24,24 +26,30 @@
                                   <thead>
                                       <tr>
                                           <th>Name</th>
-                                          <th>Position</th>
-                                          <th>Office</th>
-                                          <th>Age</th>
-                                          <th>Start date</th>
-                                          <th>Salary</th>
+                                          <th>Edit</th>
+                                          <th>Delete</th>
                                       </tr>
                                   </thead>
                                   <tbody>
-                                      
+                                    @foreach($golongans as $golongan)
+                                    <tr>
+                                      <td>
+                                        {{ $golongan->gol_nm }}
+                                      </td>
+                                      <td>
+                                        <a href="{{ route('golongan.edit', ['id' => $golongan->gol_id ]) }}"class="btn btn-xs btn-info">Edit</a>
+                                      </td>
+                                      <td>
+                                        <a href="{{ route('golongan.delete', ['id' => $golongan->gol_id ]) }}"class="btn btn-xs btn-danger">Delete</a>
+                                      </td>
+                                    </tr>
+                                    @endforeach
                                   </tbody>
                                   <tfoot>
                                       <tr>
                                           <th>Name</th>
-                                          <th>Position</th>
-                                          <th>Office</th>
-                                          <th>Age</th>
-                                          <th>Start date</th>
-                                          <th>Salary</th>
+                                          <th>Edit</th>
+                                          <th>Delete</th>
                                       </tr>
                                   </tfoot>
                               </table>
@@ -52,7 +60,7 @@
           </div>
       </div>
   </section>
-  
+
 @endsection
 @section('vendor-script')
 {{-- vendor files --}}
@@ -66,6 +74,6 @@
         <script src="{{ asset(mix('vendors/js/tables/datatable/datatables.bootstrap4.min.js')) }}"></script>
 @endsection
 @section('page-script')
-        {{-- Page js files --}} 
+        {{-- Page js files --}}
         <script src="{{ asset(mix('js/scripts/datatables/datatable.js')) }}"></script>
 @endsection
