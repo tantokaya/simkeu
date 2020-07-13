@@ -1,6 +1,6 @@
 @extends('layouts/fullLayoutMaster')
 
-@section('title', 'Login Page')
+@section('title', 'Welcome To')
 
 @section('page-style')
         {{-- Page Css files --}}
@@ -17,7 +17,7 @@
       <div class="card bg-authentication rounded-0 mb-0">
           <div class="row m-0">
               <div class="col-lg-6 d-lg-block d-none text-center align-self-center px-1 py-0">
-                  <img src="{{ asset('images/pages/login_simkeu.jpg') }}" alt="branding logo">
+                  <img src="{{ asset('images/pages/Login_payroll.png') }}" alt="branding logo">
               </div>
               <div class="col-lg-6 col-12 p-0">
                   <div class="card rounded-0 mb-0 px-2">
@@ -26,7 +26,7 @@
                               <h4 class="mb-0">Login</h4>
                           </div>
                       </div>
-                      <p class="px-2">Welcome to SIMKEU, please login to your account.</p>
+                      <p class="px-2">Welcome, Please login to your account.</p>
                       <div class="card-content">
                           <div class="card-body pt-1">
                             <form method="POST" action="{{ route('login') }}">
@@ -91,7 +91,7 @@
                           <div class="divider-text">OR</div>
                         </div>
                         <div class="footer-btn d-inline">
-                          <p class="text-center">Hubungi BJIK - BPPT</p>
+                          <p class="text-center">Payroll - 2020</p>
                             {{-- <a href="#" class="btn btn-facebook"><span class="fa fa-facebook"></span></a>
                             <a href="#" class="btn btn-twitter white"><span class="fa fa-twitter"></span></a>
                             <a href="#" class="btn btn-google"><span class="fa fa-google"></span></a>

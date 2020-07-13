@@ -6,7 +6,7 @@
         <ul class="nav navbar-nav flex-row">
             <li class="nav-item mr-auto"><a class="navbar-brand" href="dashboard-analytics">
                     <div class="brand-logo"></div>
-                    <h2 class="brand-text mb-0">SIMKEU</h2>
+                    <h2 class="brand-text mb-0">PAYROLL</h2>
                 </a></li>
             <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i class="feather icon-x d-block d-xl-none font-medium-4 primary toggle-icon"></i><i class="toggle-icon feather icon-disc font-medium-4 d-none d-xl-block primary collapse-toggle-icon" data-ticon="icon-disc"></i></a></li>
         </ul>
@@ -21,15 +21,15 @@
                 <ul class="menu-content">
                     <li><a href="#"><i class="feather icon-circle"></i><span class="menu-item">Data Karyawan</span></a>
                     </li>
-                    <li><a href="{{ route('golongan') }}"><i class="feather icon-circle"></i><span class="menu-item">Data Golongan</span></a>
+                    <li class="{{ Request::is('golongan') ? 'active' : '' }}"><a href="{{ route('golongan') }}"><i class="feather icon-circle"></i><span class="menu-item">Data Golongan</span></a>
                     </li>
-                    <li><a href="#"><i class="feather icon-circle"></i><span class="menu-item">Data Status</span></a>
+                    <li class="{{ Request::is('status') ? 'active' : '' }}"><a href="{{ route('status') }}"><i class="feather icon-circle"></i><span class="menu-item">Data Status</span></a>
                     </li>
-                    <li><a href="#"><i class="feather icon-circle"></i><span class="menu-item">Unit Kerja</span></a>
+                    <li class="{{ Request::is('unitkerja') ? 'active' : '' }}"><a href="{{ route('unitkerja') }}"><i class="feather icon-circle"></i><span class="menu-item">Unit Kerja</span></a>
                     </li>
-                    <li><a href="#"><i class="feather icon-circle"></i><span class="menu-item">Tunjangan</span></a>
+                    <li class="{{ Request::is('tunjangan') ? 'active' : '' }}"><a href="{{ route('tunjangan') }}"><i class="feather icon-circle"></i><span class="menu-item">Tunjangan</span></a>
                     </li>
-                    <li><a href="#"><i class="feather icon-circle"></i><span class="menu-item">Potongan</span></a>
+                    <li class="{{ Request::is('potongan') ? 'active' : '' }}"><a href="{{ route('potongan') }}"><i class="feather icon-circle"></i><span class="menu-item">Potongan</span></a>
                     </li>
                 </ul>
             </li>

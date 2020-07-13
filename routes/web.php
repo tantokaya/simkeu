@@ -31,6 +31,58 @@ Route::group(['middleware' => ['auth', 'xss']], function() {
     Route::get('/golongan/delete/{id}', 'GolonganController@destroy')->name('golongan.delete');
 
     Route::post('/golongan/update/{id}', 'GolonganController@update')->name('golongan.update');
+
+
+    Route::get('/status', 'StatusController@index')->name('status');
+
+    Route::get('/status/create', 'StatusController@create')->name('status.create');
+
+    Route::post('/status/store', 'StatusController@store')->name('status.store');
+
+    Route::get('/status/edit/{id}', 'StatusController@edit')->name('status.edit');
+
+    Route::get('/status/delete/{id}', 'StatusController@destroy')->name('status.delete');
+
+    Route::post('/status/update/{id}', 'StatusController@update')->name('status.update');
+
+
+    Route::get('/unitkerja', 'UnitkerjaController@index')->name('unitkerja');
+
+    Route::get('/unitkerja/create', 'UnitkerjaController@create')->name('unitkerja.create');
+
+    Route::post('/unitkerja/store', 'UnitkerjaController@store')->name('unitkerja.store');
+
+    Route::get('/unitkerja/edit/{id}', 'UnitkerjaController@edit')->name('unitkerja.edit');
+
+    Route::get('/unitkerja/delete/{id}', 'UnitkerjaController@destroy')->name('unitkerja.delete');
+
+    Route::post('/unitkerja/update/{id}', 'UnitkerjaController@update')->name('unitkerja.update');
+
+
+    Route::get('/tunjangan', 'TunjanganController@index')->name('tunjangan');
+
+    Route::get('/tunjangan/create', 'TunjanganController@create')->name('tunjangan.create');
+
+    Route::post('/tunjangan/store', 'TunjanganController@store')->name('tunjangan.store');
+
+    Route::get('/tunjangan/edit/{id}', 'TunjanganController@edit')->name('tunjangan.edit');
+
+    Route::get('/tunjangan/delete/{id}', 'TunjanganController@destroy')->name('tunjangan.delete');
+
+    Route::post('/tunjangan/update/{id}', 'TunjanganController@update')->name('tunjangan.update');
+
+
+    Route::get('/potongan', 'PotonganController@index')->name('potongan');
+
+    Route::get('/potongan/create', 'PotonganController@create')->name('potongan.create');
+
+    Route::post('/potongan/store', 'PotonganController@store')->name('potongan.store');
+
+    Route::get('/potongan/edit/{id}', 'PotonganController@edit')->name('potongan.edit');
+
+    Route::get('/potongan/delete/{id}', 'PotonganController@destroy')->name('potongan.delete');
+
+    Route::post('/potongan/update/{id}', 'PotonganController@update')->name('potongan.update');
 });
 
 

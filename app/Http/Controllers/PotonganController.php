@@ -4,13 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Golongan;
+use App\Potongan;
 
 use App\Http\Requests;
 
 use Session;
 
-class GolonganController extends Controller
+class PotonganController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,7 +19,7 @@ class GolonganController extends Controller
      */
     public function index()
     {
-      return view('golongan.index')->with('golongans',Golongan::all());
+        return view('potongan.index')->with('potongans',Potongan::all());
     }
 
     /**
@@ -29,7 +29,7 @@ class GolonganController extends Controller
      */
     public function create()
     {
-        return view('golongan.create');
+        return view('potongan.create');
     }
 
     /**
@@ -40,16 +40,16 @@ class GolonganController extends Controller
      */
     public function store(Request $request)
     {
-            $this->validate($request, [
-                 'nama' => 'required'
-          ]);
+          $this->validate($request, [
+               'nama' => 'required'
+        ]);
 
-          $golongan = new Golongan;
-          $golongan->gol_nm = $request->nama;
+        $potongan = new Potongan;
+        $potongan->pot_nm = $request->nama;
 
-          $golongan->save();
+        $potongan->save();
 
-          return redirect('golongan');
+        return redirect('potongan');
     }
 
     /**
@@ -71,8 +71,8 @@ class GolonganController extends Controller
      */
     public function edit($id)
     {
-        $golongan = Golongan::find($id);
-        return view('golongan.edit')->with('golongan', $golongan);
+        $potongan = Potongan::find($id);
+        return view('potongan.edit')->with('potongan', $potongan);
     }
 
     /**
@@ -84,12 +84,11 @@ class GolonganController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $golongan = Golongan::find($id);
-        $golongan->gol_nm = $request->nama;
+        $potongan = Potongan::find($id);
+        $potongan->pot_nm = $request->nama;
 
-        $golongan->save();
-        return redirect()->route('golongan');
-
+        $potongan->save();
+        return redirect()->route('potongan');
     }
 
     /**
@@ -100,11 +99,10 @@ class GolonganController extends Controller
      */
     public function destroy($id)
     {
-        $golongan = Golongan::find($id);
+      $potongan = Potongan::find($id);
 
-        $golongan->delete();
+      $potongan->delete();
 
-        return redirect('golongan');
-
+      return redirect('potongan');
     }
 }

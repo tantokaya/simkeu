@@ -4,13 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Golongan;
+use App\Unitkerja;
 
 use App\Http\Requests;
 
 use Session;
 
-class GolonganController extends Controller
+class UnitkerjaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,7 +19,7 @@ class GolonganController extends Controller
      */
     public function index()
     {
-      return view('golongan.index')->with('golongans',Golongan::all());
+        return view('unitkerja.index')->with('unitkerjas',Unitkerja::all());
     }
 
     /**
@@ -29,7 +29,7 @@ class GolonganController extends Controller
      */
     public function create()
     {
-        return view('golongan.create');
+        return view('unitkerja.create');
     }
 
     /**
@@ -44,12 +44,12 @@ class GolonganController extends Controller
                  'nama' => 'required'
           ]);
 
-          $golongan = new Golongan;
-          $golongan->gol_nm = $request->nama;
+          $unitkerja = new Unitkerja;
+          $unitkerja->unk_nm = $request->nama;
 
-          $golongan->save();
+          $unitkerja->save();
 
-          return redirect('golongan');
+          return redirect('unitkerja');
     }
 
     /**
@@ -71,8 +71,8 @@ class GolonganController extends Controller
      */
     public function edit($id)
     {
-        $golongan = Golongan::find($id);
-        return view('golongan.edit')->with('golongan', $golongan);
+      $unitkerja = Unitkerja::find($id);
+      return view('unitkerja.edit')->with('unitkerja', $unitkerja);
     }
 
     /**
@@ -84,12 +84,11 @@ class GolonganController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $golongan = Golongan::find($id);
-        $golongan->gol_nm = $request->nama;
+          $unitkerja = Unitkerja::find($id);
+          $unitkerja->sta_nm = $request->nama;
 
-        $golongan->save();
-        return redirect()->route('golongan');
-
+          $unitkerja->save();
+          return redirect()->route('unitkerja');
     }
 
     /**
@@ -100,11 +99,10 @@ class GolonganController extends Controller
      */
     public function destroy($id)
     {
-        $golongan = Golongan::find($id);
+      $unitkerja = Unitkerja::find($id);
 
-        $golongan->delete();
+      $unitkerja->delete();
 
-        return redirect('golongan');
-
+      return redirect('unitkerja');
     }
 }

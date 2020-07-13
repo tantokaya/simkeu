@@ -4,13 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Golongan;
+use App\Tunjangan;
 
 use App\Http\Requests;
 
 use Session;
 
-class GolonganController extends Controller
+class TunjanganController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,7 +19,7 @@ class GolonganController extends Controller
      */
     public function index()
     {
-      return view('golongan.index')->with('golongans',Golongan::all());
+        return view('tunjangan.index')->with('tunjangans',Tunjangan::all());
     }
 
     /**
@@ -29,7 +29,7 @@ class GolonganController extends Controller
      */
     public function create()
     {
-        return view('golongan.create');
+        return view('tunjangan.create');
     }
 
     /**
@@ -40,16 +40,16 @@ class GolonganController extends Controller
      */
     public function store(Request $request)
     {
-            $this->validate($request, [
-                 'nama' => 'required'
-          ]);
+          $this->validate($request, [
+               'nama' => 'required'
+        ]);
 
-          $golongan = new Golongan;
-          $golongan->gol_nm = $request->nama;
+        $tunjangan = new Tunjangan;
+        $tunjangan->tun_nm = $request->nama;
 
-          $golongan->save();
+        $tunjangan->save();
 
-          return redirect('golongan');
+        return redirect('tunjangan');
     }
 
     /**
@@ -71,8 +71,8 @@ class GolonganController extends Controller
      */
     public function edit($id)
     {
-        $golongan = Golongan::find($id);
-        return view('golongan.edit')->with('golongan', $golongan);
+        $tunjangan = Tunjangan::find($id);
+        return view('tunjangan.edit')->with('tunjangan', $tunjangan);
     }
 
     /**
@@ -84,12 +84,11 @@ class GolonganController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $golongan = Golongan::find($id);
-        $golongan->gol_nm = $request->nama;
+        $tunjangan = Tunjangan::find($id);
+        $tunjangan->tun_nm = $request->nama;
 
-        $golongan->save();
-        return redirect()->route('golongan');
-
+        $tunjangan->save();
+        return redirect()->route('tunjangan');
     }
 
     /**
@@ -100,11 +99,10 @@ class GolonganController extends Controller
      */
     public function destroy($id)
     {
-        $golongan = Golongan::find($id);
+      $tunjangan = Tunjangan::find($id);
 
-        $golongan->delete();
+      $tunjangan->delete();
 
-        return redirect('golongan');
-
+      return redirect('tunjangan');
     }
 }

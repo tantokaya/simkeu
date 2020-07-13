@@ -4,13 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Golongan;
+use App\Status;
 
 use App\Http\Requests;
 
 use Session;
 
-class GolonganController extends Controller
+class StatusController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,7 +19,7 @@ class GolonganController extends Controller
      */
     public function index()
     {
-      return view('golongan.index')->with('golongans',Golongan::all());
+        return view('status.index')->with('statuses',Status::all());
     }
 
     /**
@@ -29,7 +29,7 @@ class GolonganController extends Controller
      */
     public function create()
     {
-        return view('golongan.create');
+        return view('status.create');
     }
 
     /**
@@ -44,12 +44,12 @@ class GolonganController extends Controller
                  'nama' => 'required'
           ]);
 
-          $golongan = new Golongan;
-          $golongan->gol_nm = $request->nama;
+          $status = new Status;
+          $status->sta_nm = $request->nama;
 
-          $golongan->save();
+          $status->save();
 
-          return redirect('golongan');
+          return redirect('status');
     }
 
     /**
@@ -71,8 +71,8 @@ class GolonganController extends Controller
      */
     public function edit($id)
     {
-        $golongan = Golongan::find($id);
-        return view('golongan.edit')->with('golongan', $golongan);
+      $status = Status::find($id);
+      return view('status.edit')->with('status', $status);
     }
 
     /**
@@ -84,12 +84,11 @@ class GolonganController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $golongan = Golongan::find($id);
-        $golongan->gol_nm = $request->nama;
+          $status = Status::find($id);
+          $status->sta_nm = $request->nama;
 
-        $golongan->save();
-        return redirect()->route('golongan');
-
+          $status->save();
+          return redirect()->route('status');
     }
 
     /**
@@ -100,11 +99,10 @@ class GolonganController extends Controller
      */
     public function destroy($id)
     {
-        $golongan = Golongan::find($id);
+      $status = Status::find($id);
 
-        $golongan->delete();
+      $status->delete();
 
-        return redirect('golongan');
-
+      return redirect('status');
     }
 }
