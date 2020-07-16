@@ -1,7 +1,7 @@
 
 @extends('layouts/contentLayoutMaster')
 
-@section('title', 'Tunjangan')
+@section('title', 'Data Gaji Karyawan')
 @section('vendor-style')
         {{-- vendor css files --}}
         <link rel="stylesheet" href="{{ asset(mix('vendors/css/tables/datatable/datatables.min.css')) }}">
@@ -10,7 +10,7 @@
 @section('content')
 <div class="row">
   <div style="padding-left: 20px; padding-bottom: 10px;">
-    <a href="{{ route('tunjangan.create') }}"> <button type="button" class="btn btn-primary">Tambah</button></a>
+    <a href="{{ route('gaji.create') }}"><button type="button" class="btn btn-outline-primary round waves-effect waves-light"><i class="feather icon-plus-circle"></i> Tambah</button></a>
     <br/>
   </div>
   </div>
@@ -25,31 +25,38 @@
                               <table class="table zero-configuration">
                                   <thead>
                                       <tr>
-                                          <th>Nominal</th>
-                                          <th>Edit</th>
-                                          <th>Delete</th>
+                                          <th width="10%" class="text-center">Bulan</th>
+                                          <th width="10%" class="text-center">Tahun</th>
+                                          <th width="10%" class="text-center">NIP</th>
+                                          <th width="30%" class="text-center">Nama</th>
+                                          <th width="10%" class="text-center">Edit</th>
+                                          <th width="10%" class="text-center">Delete</th>
                                       </tr>
                                   </thead>
                                   <tbody>
-                                    @foreach($tunjangans as $tunjangan)
+                                    @foreach($data as $gaji)
                                     <tr>
+                                      <td>{{ $gaji->bulan }}</td>
+                                      <td>{{ $gaji->tahun }}</td>
+                                      <td>{{ $gaji->nip }}</td>
+                                      <td>{{ $gaji->nama }}</td>
                                       <td>
-                                        {{ $tunjangan->tun_nm }}
+                                        <a href="{{ route('gaji.edit', ['id' => $gaji->id ]) }}"class="btn btn-sm btn-info round"><i class="feather icon-edit"></i> Ubah</a>
                                       </td>
                                       <td>
-                                        <a href="{{ route('tunjangan.edit', ['id' => $tunjangan->id ]) }}"class="btn btn-xs btn-info">Edit</a>
-                                      </td>
-                                      <td>
-                                        <a href="{{ route('tunjangan.delete', ['id' => $tunjangan->id ]) }}"class="btn btn-xs btn-danger">Delete</a>
+                                        <a href="{{ route('gaji.delete', ['id' => $gaji->id ]) }}"class="btn btn-sm btn-danger round" onclick="return confirm('Anda yakin mau menghapus item ini ?')"><i class="feather icon-trash-2"></i> Hapus</a>
                                       </td>
                                     </tr>
                                     @endforeach
                                   </tbody>
                                   <tfoot>
                                       <tr>
-                                          <th>Nominal</th>
-                                          <th>Edit</th>
-                                          <th>Delete</th>
+                                        <th width="10%" class="text-center">Bulan</th>
+                                        <th width="10%" class="text-center">Tahun</th>
+                                        <th width="10%" class="text-center">NIP</th>
+                                        <th width="30%" class="text-center">Nama</th>
+                                        <th width="10%" class="text-center">Edit</th>
+                                        <th width="10%" class="text-center">Delete</th>
                                       </tr>
                                   </tfoot>
                               </table>

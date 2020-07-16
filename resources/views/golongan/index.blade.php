@@ -10,7 +10,7 @@
 @section('content')
 <div class="row">
   <div style="padding-left: 20px; padding-bottom: 10px;">
-    <a href="{{ route('golongan.create') }}"> <button type="button" class="btn btn-primary">Tambah</button></a>
+    <a href="{{ route('golongan.create') }}"><button type="button" class="btn btn-outline-primary round waves-effect waves-light"><i class="feather icon-plus-circle"></i> Tambah</button></a>
     <br/>
   </div>
   </div>
@@ -25,9 +25,9 @@
                               <table class="table zero-configuration">
                                   <thead>
                                       <tr>
-                                          <th>Name</th>
-                                          <th>Edit</th>
-                                          <th>Delete</th>
+                                          <th width="70%">Name</th>
+                                          <th width="10%">Edit</th>
+                                          <th width="10%">Delete</th>
                                       </tr>
                                   </thead>
                                   <tbody>
@@ -37,19 +37,19 @@
                                         {{ $golongan->gol_nm }}
                                       </td>
                                       <td>
-                                        <a href="{{ route('golongan.edit', ['id' => $golongan->id ]) }}"class="btn btn-xs btn-info">Edit</a>
+                                        <a href="{{ route('golongan.edit', ['id' => $golongan->id ]) }}"class="btn btn-sm round btn-info"><i class="feather icon-edit"></i> Ubah</a>
                                       </td>
                                       <td>
-                                        <a href="{{ route('golongan.delete', ['id' => $golongan->id ]) }}"class="btn btn-xs btn-danger">Delete</a>
+                                        <a href="{{ route('golongan.delete', ['id' => $golongan->id ]) }}"class="btn btn-sm round btn-danger" onclick="return confirm('Anda yakin mau menghapus item ini ?')"><i class="feather icon-trash-2"></i> Hapus</a>
                                       </td>
                                     </tr>
                                     @endforeach
                                   </tbody>
                                   <tfoot>
                                       <tr>
-                                          <th>Name</th>
-                                          <th>Edit</th>
-                                          <th>Delete</th>
+                                          <th width="70%">Name</th>
+                                          <th width="10%">Edit</th>
+                                          <th width="10%">Delete</th>
                                       </tr>
                                   </tfoot>
                               </table>

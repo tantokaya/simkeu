@@ -3,14 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Karyawan;
 
-use App\Tunjangan;
+use session;
 
-use App\Http\Requests;
-
-use Session;
-
-class TunjanganController extends Controller
+class StrukController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,7 +16,7 @@ class TunjanganController extends Controller
      */
     public function index()
     {
-        return view('tunjangan.index')->with('tunjangans',Tunjangan::all());
+        return view('struk.index')->with('struks',Karyawan::all());
     }
 
     /**
@@ -29,7 +26,7 @@ class TunjanganController extends Controller
      */
     public function create()
     {
-        return view('tunjangan.create');
+        //
     }
 
     /**
@@ -40,16 +37,7 @@ class TunjanganController extends Controller
      */
     public function store(Request $request)
     {
-          $this->validate($request, [
-               'nama' => 'required'
-        ]);
-
-        $tunjangan = new Tunjangan;
-        $tunjangan->tun_nm = $request->nama;
-
-        $tunjangan->save();
-
-        return redirect('tunjangan');
+        //
     }
 
     /**
@@ -71,8 +59,7 @@ class TunjanganController extends Controller
      */
     public function edit($id)
     {
-        $tunjangan = Tunjangan::find($id);
-        return view('tunjangan.edit')->with('tunjangan', $tunjangan);
+        //
     }
 
     /**
@@ -84,11 +71,7 @@ class TunjanganController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $tunjangan = Tunjangan::find($id);
-        $tunjangan->tun_nm = $request->nama;
-
-        $tunjangan->save();
-        return redirect()->route('tunjangan');
+        //
     }
 
     /**
@@ -99,10 +82,6 @@ class TunjanganController extends Controller
      */
     public function destroy($id)
     {
-      $tunjangan = Tunjangan::find($id);
-
-      $tunjangan->delete();
-
-      return redirect('tunjangan');
+        //
     }
 }

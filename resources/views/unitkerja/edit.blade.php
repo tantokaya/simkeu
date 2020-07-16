@@ -21,9 +21,8 @@
                                   <label>Nama Unit</label>
                               <input type="text" class="form-control" name="nama" value="{{ $unitkerja->unk_nm }}" placeholder="Ubah Nama Unit">
                               </fieldset>
-                              <button class="btn btn-success" type="submit">
-                                Ubah
-                              </button>
+                              <button class="btn btn-primary" type="submit"><i class="feather icon-edit"></i> Ubah</button>
+                              <a href="{{ route('unitkerja') }}" class="btn btn-outline-warning"> <i class="feather icon-corner-up-left"></i> Kembali</a>
                             </form>
                           </div>
                       </div>

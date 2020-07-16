@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Tunjangan extends Model
+class Pendidikan extends Model
 {
     public function karyawans()
     {

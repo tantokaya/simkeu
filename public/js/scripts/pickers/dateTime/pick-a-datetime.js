@@ -11,7 +11,13 @@
 
     /*******    Pick-a-date Picker  *****/
     // Basic date
-    $('.pickadate').pickadate();
+    $('.pickadate').pickadate({
+        formatSubmit: 'yyyy-mm-dd',
+        selectYears: 80,
+        selectMonths: true,
+        max: [2020],
+        hiddenName: true
+    });
 
     // Format Date Picker
     $('.format-picker').pickadate({
@@ -21,7 +27,7 @@
     // Date limits
     $('.pickadate-limits').pickadate({
         min: [2019,3,20],
-        max: [2019,5,28]
+        max: [2019,5,20]
     });
     
     // Disabled Dates & Weeks

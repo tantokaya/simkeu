@@ -21,9 +21,8 @@
                                   <label>Nama Status</label>
                               <input type="text" class="form-control" name="nama" value="{{ $status->sta_nm }}" placeholder="Ubah Nama Status">
                               </fieldset>
-                              <button class="btn btn-success" type="submit">
-                                Ubah
-                              </button>
+                              <button class="btn btn-primary" type="submit"><i class="feather icon-edit"></i> Ubah</button>
+                              <a href="{{ route('status') }}" class="btn btn-outline-warning"> <i class="feather icon-corner-up-left"></i> Kembali</a>
                             </form>
                           </div>
                       </div>

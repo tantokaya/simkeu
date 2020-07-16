@@ -19,11 +19,10 @@
                               {{ csrf_field() }}
                               <fieldset class="form-group">
                                   <label>Nama Golongan</label>
-                              <input type="text" class="form-control" name="nama" value="{{ $golongan->gol_nm }}" placeholder="Ubah Nama Golongan">
+                              <input type="text" class="form-control" name="nama" value="{{ $golongan->gol_nm }}" placeholder="Ubah Nama Golongan" autofocus>
                               </fieldset>
-                              <button class="btn btn-success" type="submit">
-                                Ubah
-                              </button>
+                              <button class="btn btn-primary" type="submit"><i class="feather icon-edit"></i> Ubah</button>
+                              <a href="{{ route('golongan') }}" class="btn btn-outline-warning"> <i class="feather icon-corner-up-left"></i> Kembali</a>
                             </form>
                           </div>
                       </div>

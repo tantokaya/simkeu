@@ -19,11 +19,10 @@
                               {{ csrf_field() }}
                               <fieldset class="form-group">
                                   <label>Nama Status</label>
-                                  <input type="text" class="form-control" name="nama" placeholder="Masukan Status Pegawai">
+                                  <input type="text" class="form-control" name="nama" placeholder="Masukan Status Pegawai" autofocus>
                               </fieldset>
-                              <button class="btn btn-success" type="submit">
-                                Simpan
-                              </button>
+                              <button class="btn btn-primary" type="submit"><i class="feather icon-save"></i> Simpan</button>
+                              <a href="{{ route('status') }}" class="btn btn-outline-warning"> <i class="feather icon-corner-up-left"></i> Kembali</a>
                             </form>
                           </div>
                       </div>
