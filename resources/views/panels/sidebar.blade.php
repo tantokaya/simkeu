@@ -43,6 +43,17 @@
                     </li>
                 </ul>
             </li>
+            <li class=" nav-item"><a href="#"><i class="feather icon-sliders"></i><span class="menu-title">Settings</span></a>
+                <ul class="menu-content">
+                    <li class="{{ Request::is('user') ? 'active' : '' }}"><a href="{{ route('user') }}"><i class="feather icon-circle"></i><span class="menu-item">User</span></a>
+                    </li>
+                </ul>
+            </li>
+            <li class=" nav-item"><a href="javascript:void(0);" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="feather icon-log-out"></i><span class="menu-title">Log out</span></a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+            </li>
             {{-- Foreach menu item ends --}}
         </ul>
     </div>
