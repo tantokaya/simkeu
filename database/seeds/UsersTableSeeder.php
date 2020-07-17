@@ -13,18 +13,20 @@ class UsersTableSeeder extends Seeder
     {
         DB::table('users')->insert([
             [
-                'name' => 'Bagus',
-                'email' => 'bagus@gmail.com',
-                'password' => Hash::make('bagus1234'),
-                'group_id' => '1',
+                'name'      => 'Bagus',
+                'email'     => 'bagus@gmail.com',
+                'password'  => Hash::make('bagus1234'),
+                'group_id'  => '1',
+                'nip'       => '198202993993333', 
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],
             [
-                'name' => 'Karyawan 1',
-                'email' => 'kary_1@gmail.com',
-                'password' => Hash::make('kary1234'),
-                'group_id' => '2',
+                'name'      => 'Karyawan 1',
+                'email'     => 'kary_1@gmail.com',
+                'password'  => Hash::make('kary1234'),
+                'group_id'   => '2',
+                'nip'       => '200028324234234',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ]

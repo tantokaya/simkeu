@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->tinyInteger('group_id')->unsigned()->nullable()->index();
+            $table->string('nip', 50);
             $table->timestamps();
         });
     }
