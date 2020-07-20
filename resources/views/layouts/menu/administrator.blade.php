@@ -18,6 +18,12 @@
         </li>
     </ul>
 </li>
+<li class=" nav-item"><a href="#"><i class="feather icon-cpu"></i><span class="menu-title">Setting</span></a>
+    <ul class="menu-content">
+        <li class="{{ Request::is('user') ? 'active' : '' }}"><a href="{{ route('user') }}"><i class="feather icon-circle"></i><span class="menu-item">User</span></a>
+        </li>
+    </ul>
+</li>
 <li class=" nav-item"><a href="#"><i class="feather icon-award"></i><span class="menu-title">Laporan</span></a>
     <ul class="menu-content">
         {{-- <li><a href="#"><i class="feather icon-circle"></i><span class="menu-item">Cetak Daftar Karyawan</span></a>
